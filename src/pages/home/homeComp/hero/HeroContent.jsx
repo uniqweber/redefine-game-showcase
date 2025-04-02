@@ -1,6 +1,6 @@
 import React from "react";
 import {TiLocationArrow} from "react-icons/ti";
-import Button from "../../../components/ui/Button";
+import Button from "../../../../components/ui/Button";
 
 const HeroContent = () => {
   return (

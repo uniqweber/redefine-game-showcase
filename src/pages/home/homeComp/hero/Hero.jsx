@@ -1,11 +1,11 @@
 import HeroLoading from "./HeroLoading";
 import HeroContent from "./HeroContent";
-import useHeroVideoAnimation from "../../../hooks/useHeroVideoAnimation";
-import useHeroVideoLogic from "../../../hooks/useHeroVideoLogic";
+import useHeroVideoAnimation from "../../../../hooks/useHeroVideoAnimation";
+import useHeroVideoLogic from "../../../../hooks/useHeroVideoLogic";
 import HeroVideo from "./HeroVideo";
 
 const Hero = () => {
-  const {currentIndex, nextVideoRef, isLoading, hasClicked, miniPlayerClick, handleVideoLoad, getVideoSrc} = useHeroVideoLogic();
+  const {currentIndex, nextVideoRef, isLoading, hasClicked, miniPlayerClick, handleVideoLoad, getVideoSrc, upcomingVideoIndex} = useHeroVideoLogic();
   useHeroVideoAnimation(hasClicked, nextVideoRef, currentIndex);
 
   return (
@@ -17,7 +17,7 @@ const Hero = () => {
             <HeroVideo
               id="current-video"
               videoRef={nextVideoRef}
-              src={getVideoSrc(currentIndex + 1)}
+              src={getVideoSrc(upcomingVideoIndex)}
               onLoad={handleVideoLoad}
               className="size-64 scale-150"
             />

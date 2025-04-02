@@ -1,13 +1,14 @@
 import {useEffect, useRef, useState} from "react";
 
-const useHeroVideoLogic = (totalVideos = 3) => {
+const useHeroVideoLogic = (totalVideos = 4) => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState(0);
 
   const nextVideoRef = useRef(null);
-  const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
+  const upcomingVideoIndex = currentIndex === totalVideos ? 1 : currentIndex + 1;
+
 
   const handleVideoLoad = () => setLoadedVideos((prev) => prev + 1);
 
@@ -27,6 +28,7 @@ const useHeroVideoLogic = (totalVideos = 3) => {
     hasClicked,
     miniPlayerClick,
     handleVideoLoad,
+    upcomingVideoIndex,
     getVideoSrc: (index) => `videos/hero-${index}.mp4`,
   };
 };
