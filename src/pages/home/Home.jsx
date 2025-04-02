@@ -1,12 +1,17 @@
 import React from "react";
 import Hero from "./homeComp/hero/Hero";
+import About from "./homeComp/about/About";
+import Navbar from "../../components/shared/navbar/Navbar";
 
 const Home = () => {
   return (
-    <main className="relative min-h-screen w-screen overflow-x-hidden">
-      <Hero />
-      <section className="h-dvh bg-violet-300"></section>
-    </main>
+    <>
+      <Navbar />
+      <main className="relative min-h-screen w-screen overflow-x-hidden">
+        <Hero />
+        <About />
+      </main>
+    </>
   );
 };
 

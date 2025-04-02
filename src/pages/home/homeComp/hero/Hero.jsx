@@ -1,6 +1,6 @@
 import HeroLoading from "./HeroLoading";
 import HeroContent from "./HeroContent";
-import useHeroVideoAnimation from "../../../../hooks/useHeroVideoAnimation";
+import useHeroVideoAnimation from "../../../../hooks/animations/useHeroVideoAnimation";
 import useHeroVideoLogic from "../../../../hooks/useHeroVideoLogic";
 import HeroVideo from "./HeroVideo";
 
@@ -32,12 +32,12 @@ const Hero = () => {
           className="absolute-center invisible z-20 size-64"
         />
 
-        <HeroVideo id="bg-video" src={getVideoSrc(currentIndex)} onLoad={handleVideoLoad} className="left-0 top-0 size-full" autoPlay />
+        <HeroVideo id="bg-video" src={getVideoSrc(currentIndex)} onLoad={handleVideoLoad} className="left-0 top-0 size-full" autoPlay={false} />
 
         <HeroContent />
       </div>
       <h1 className="hero-heading absolute bottom-5 right-5 text-black">
-        G<b className="font-zentry-ss01">a</b>ming
+        G<b>a</b>ming
       </h1>
     </div>
   );
