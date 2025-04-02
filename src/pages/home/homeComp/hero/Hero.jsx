@@ -1,7 +1,7 @@
 import HeroLoading from "./HeroLoading";
 import HeroContent from "./HeroContent";
 import useHeroVideoAnimation from "../../../../hooks/animations/useHeroVideoAnimation";
-import useHeroVideoLogic from "../../../../hooks/useHeroVideoLogic";
+import useHeroVideoLogic from "../../../../hooks/logic/useHeroVideoLogic";
 import HeroVideo from "./HeroVideo";
 
 const Hero = () => {
