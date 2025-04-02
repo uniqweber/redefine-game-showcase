@@ -1,10 +1,11 @@
 import React from "react";
+import Home from "./pages/home/Home";
 
 const App = () => {
   return (
-    <div>
-      <div className="space-y-4 text-4xl"></div>
-    </div>
+    <>
+      <Home />
+    </>
   );
 };
 
