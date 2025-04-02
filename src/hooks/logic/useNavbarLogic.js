@@ -1,3 +1,4 @@
+import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {useEffect, useRef, useState} from "react";
 import {useWindowScroll} from "react-use";
@@ -40,13 +41,17 @@ const useNavbarLogic = () => {
     setLastScrollY(currentScrollY);
   }, [currentScrollY, lastScrollY]);
 
-  useEffect(() => {
-    gsap.to(navContainerRef.current, {
-      y: isNavVisible ? 0 : -100,
-      opacity: isNavVisible ? 1 : 0,
-      duration: 0.2,
-    });
-  }, [isNavVisible]);
+  useGSAP(
+    () => {
+      gsap.to(navContainerRef.current, {
+        y: isNavVisible ? 0 : -100,
+        opacity: isNavVisible ? 1 : 0,
+        duration: 0.3,
+        ease: "power1.inOut",
+      });
+    },
+    {dependencies: [isNavVisible]}
+  );
 
   return {navContainerRef, toggleAudioIndicator, isIndicatorActive, audioElementRef};
 };
