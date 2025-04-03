@@ -9,6 +9,9 @@ const HeroVideo = ({id, videoRef, src, onLoad, className, autoPlay = false}) => 
       onLoadedData={onLoad}
       loop
       muted
+      preload="auto"
+      playsInline
+      loading="lazy"
       autoPlay={autoPlay}
       className={`absolute object-cover object-center ${className}`}
     />
