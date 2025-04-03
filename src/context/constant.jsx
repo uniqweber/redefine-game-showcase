@@ -54,3 +54,12 @@ export const comingSoonFeature = {
   ),
   icon: <TiLocationArrow className="m-5 scale-[5] self-end" />,
 };
+
+import {FaDiscord, FaTwitter, FaYoutube, FaMedium} from "react-icons/fa";
+
+export const socialLinks = [
+  {href: "https://discord.com", icon: <FaDiscord />},
+  {href: "https://twitter.com", icon: <FaTwitter />},
+  {href: "https://youtube.com", icon: <FaYoutube />},
+  {href: "https://medium.com", icon: <FaMedium />},
+];

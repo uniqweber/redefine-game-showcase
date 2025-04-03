@@ -13,7 +13,7 @@ const HeroContent = () => {
           <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
             Enter the Metagame Layer <br /> Unleash the Play Economy
           </p>
-          <Button id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow />} containerClasses="bg-yellow-300 flex-center gap-1" />
+          <Button id="watch-trailer" title="Watch trailer" leftIcon={<TiLocationArrow />} containerClass="bg-yellow-300 flex-center gap-1" />
         </div>
       </div>
 
