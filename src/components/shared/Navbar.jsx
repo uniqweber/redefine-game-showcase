@@ -2,17 +2,19 @@ import clsx from "clsx";
 import {TiLocationArrow} from "react-icons/ti";
 import Button from "../ui/Button";
 import useNavbarLogic from "../../hooks/logic/useNavbarLogic";
-import {navItems} from "../../context/constant";
+import {navItems} from "../../utils/constant/constant";
+import { useSmoothScroll } from "../../context/SmoothScrollContext";
 
 const NavBar = () => {
   const {navContainerRef, toggleAudioIndicator, audioElementRef, isIndicatorActive} = useNavbarLogic();
+  const scrollToSection = useSmoothScroll()
 
   return (
     <div ref={navContainerRef} className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6">
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src="/img/logo.png" alt="logo" className="size-10" />
+            <img onClick={()=>scrollToSection("nexus")} src="/img/logo.png" alt="logo" className="size-10 cursor-pointer hover:scale-125 duration-500" />
             <Button
               id="product-button"
               title="Products"
@@ -24,9 +26,9 @@ const NavBar = () => {
           <div className="flex h-full items-center">
             <div className="hidden md:block">
               {navItems.map((item, index) => (
-                <a key={index} href={`#${item.toLowerCase()}`} className="nav-hover-btn">
+                <button className="nav-hover-btn" key={index} onClick={() => scrollToSection(item.toLocaleLowerCase())}>
                   {item}
-                </a>
+                </button>
               ))}
             </div>
 

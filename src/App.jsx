@@ -1,10 +1,12 @@
-import React from "react";
 import Home from "./pages/home/Home";
+import {SmoothScrollProvider} from "./context/SmoothScrollContext";
 
 const App = () => {
   return (
     <>
-      <Home />
+      <SmoothScrollProvider>
+        <Home />
+      </SmoothScrollProvider>
     </>
   );
 };

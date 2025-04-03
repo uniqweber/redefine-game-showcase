@@ -1,6 +1,6 @@
 import {TiLocationArrow} from "react-icons/ti";
 
-export const navItems = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+export const navItems = ["Nexus", "About", "Vault", "Prologue", "Contact"];
 export const firstFeatureItem = {
   src: "videos/feature-1.mp4",
   title: (

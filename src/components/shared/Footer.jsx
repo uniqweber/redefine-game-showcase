@@ -1,4 +1,4 @@
-import { socialLinks } from "../../context/constant";
+import {socialLinks} from "../../utils/constant/constant";
 
 const Footer = () => {
   return (
