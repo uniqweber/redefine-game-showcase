@@ -24,7 +24,7 @@ const ComingSoonButton = () => {
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 py-2 text-xs uppercase text-white/20"
+      className="border-hsla relative flex w-fit cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-black px-5 h-10 text-xs uppercase text-white/20"
     >
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
