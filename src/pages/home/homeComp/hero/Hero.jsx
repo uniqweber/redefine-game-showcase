@@ -3,6 +3,7 @@ import HeroContent from "./HeroContent";
 import useHeroVideoAnimation from "../../../../hooks/animations/useHeroVideoAnimation";
 import useHeroVideoLogic from "../../../../hooks/logic/useHeroVideoLogic";
 import HeroVideo from "./HeroVideo";
+import VideoPreview from "./VideoPreview";
 
 const Hero = () => {
   const {currentIndex, nextVideoRef, isLoading, hasClicked, miniPlayerClick, handleVideoLoad, getVideoSrc, upcomingVideoIndex} = useHeroVideoLogic();
@@ -14,13 +15,15 @@ const Hero = () => {
       <div id="video-frame" className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
         <div className="mask-clip-path absolute absolute-center z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
           <div className="origin-center scale-50 opacity-0 transition-all duration-500 hover:scale-100 hover:opacity-100" onClick={miniPlayerClick}>
-            <HeroVideo
-              id="current-video"
-              videoRef={nextVideoRef}
-              src={getVideoSrc(upcomingVideoIndex)}
-              onLoad={handleVideoLoad}
-              className="size-64 scale-150"
-            />
+            <VideoPreview>
+              <HeroVideo
+                id="current-video"
+                videoRef={nextVideoRef}
+                src={getVideoSrc(upcomingVideoIndex)}
+                onLoad={handleVideoLoad}
+                className="size-64 scale-150"
+              />
+            </VideoPreview>
           </div>
         </div>
 
@@ -32,7 +35,7 @@ const Hero = () => {
           className="absolute-center invisible z-20 size-64"
         />
 
-        <HeroVideo id="bg-video" src={getVideoSrc(currentIndex)} onLoad={handleVideoLoad} className="left-0 top-0 size-full" autoPlay={false} />
+        <HeroVideo id="bg-video" src={getVideoSrc(currentIndex)} onLoad={handleVideoLoad} className="left-0 top-0 size-full" autoPlay />
 
         <HeroContent />
       </div>
