@@ -36,5 +36,4 @@ export const SmoothScrollProvider = ({children}) => {
   return <SmoothScrollContext.Provider value={scrollToSection}>{children}</SmoothScrollContext.Provider>;
 };
 
-
 export const useSmoothScroll = () => useContext(SmoothScrollContext);
