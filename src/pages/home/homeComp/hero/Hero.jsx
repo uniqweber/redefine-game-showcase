@@ -14,8 +14,8 @@ const Hero = () => {
       {isLoading && <HeroLoading />}
       <div id="video-frame" className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
         <div className="mask-clip-path absolute absolute-center z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
-          <div className="origin-center scale-50 opacity-0 transition-all duration-500 hover:scale-100 hover:opacity-100" onClick={miniPlayerClick}>
-            <VideoPreview>
+          <VideoPreview>
+            <div className="origin-center scale-50 opacity-0 transition-all duration-500  hover:scale-100 hover:opacity-100" onClick={miniPlayerClick}>
               <HeroVideo
                 id="current-video"
                 videoRef={nextVideoRef}
@@ -23,8 +23,8 @@ const Hero = () => {
                 onLoad={handleVideoLoad}
                 className="size-64 scale-150"
               />
-            </VideoPreview>
-          </div>
+            </div>
+          </VideoPreview>
         </div>
 
         <HeroVideo
@@ -34,9 +34,7 @@ const Hero = () => {
           onLoad={handleVideoLoad}
           className="absolute-center invisible z-20 size-64"
         />
-
         <HeroVideo id="bg-video" src={getVideoSrc(currentIndex)} onLoad={handleVideoLoad} className="left-0 top-0 size-full" autoPlay />
-
         <HeroContent />
       </div>
       <h1 className="hero-heading absolute bottom-5 right-5 text-black">
